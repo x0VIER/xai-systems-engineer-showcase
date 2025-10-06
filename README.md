@@ -1,12 +1,34 @@
 # xAI Systems Engineer Showcase
 
-![xAI Systems Engineer Showcase Banner](./docs/banner.png)
+<div align="center">
+  <img src="docs/banner.png" alt="xAI Systems Engineer Showcase Banner" width="800">
+</div>
 
-A comprehensive demonstration of systems engineering expertise through three interconnected Rust-based tools designed for security, reliability, and observability.
+<div align="center">
+  <strong>A comprehensive demonstration of systems engineering expertise through three interconnected Rust-based tools</strong>
+</div>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![Rust](https://img.shields.io/badge/Rust-1.70%2B-orange)](https://www.rust-lang.org/)
-[![Security](https://img.shields.io/badge/Security-Hardened-green)](https://github.com/topics/security)
+<br />
+
+<div align="center">
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+  </a>
+  <a href="https://www.rust-lang.org/">
+    <img src="https://img.shields.io/badge/Rust-1.70%2B-orange" alt="Rust: 1.70+">
+  </a>
+  <a href="https://github.com/topics/security">
+    <img src="https://img.shields.io/badge/Security-Hardened-green" alt="Security: Hardened">
+  </a>
+  <a href="https://github.com/topics/distributed-systems">
+    <img src="https://img.shields.io/badge/Type-Distributed_Systems-blueviolet" alt="Type: Distributed Systems">
+  </a>
+  <a href="https://github.com/topics/network-analysis">
+    <img src="https://img.shields.io/badge/Feature-Network_Analysis-yellow" alt="Feature: Network Analysis">
+  </a>
+</div>
+
+<br />
 
 ## Project Overview
 
@@ -22,6 +44,10 @@ These tools are designed to work together, demonstrating a holistic approach to 
 
 ## Architecture
 
+<div align="center">
+  <img src="docs/project_overview.png" alt="Project Architecture Overview" width="700">
+</div>
+
 The project implements several advanced architectural patterns:
 
 - **Process Isolation**: Using Linux namespaces and bubblewrap for secure execution environments
@@ -30,7 +56,60 @@ The project implements several advanced architectural patterns:
 - **Resource Monitoring**: Real-time tracking of CPU and memory usage
 - **Data Visualization**: Interactive charts and graphs for system metrics
 
-![Project Architecture Overview](./docs/project_overview.png)
+## Component Highlights
+
+<table>
+  <tr>
+    <th>Component</th>
+    <th>Key Features</th>
+    <th>Technologies</th>
+  </tr>
+  <tr>
+    <td><a href="./sandbox/">Secure Sandbox</a></td>
+    <td>
+      • Process isolation<br>
+      • Filesystem restrictions<br>
+      • Network blocking<br>
+      • Resource monitoring
+    </td>
+    <td>
+      • bubblewrap<br>
+      • procfs<br>
+      • Linux namespaces<br>
+      • Rust
+    </td>
+  </tr>
+  <tr>
+    <td><a href="./distributed_kv/">Distributed KV Store</a></td>
+    <td>
+      • Raft consensus<br>
+      • Fault tolerance<br>
+      • Leader election<br>
+      • Interactive GUI
+    </td>
+    <td>
+      • gRPC/tonic<br>
+      • Protocol Buffers<br>
+      • egui/eframe<br>
+      • Rust
+    </td>
+  </tr>
+  <tr>
+    <td><a href="./net_forensics/">Network Forensics</a></td>
+    <td>
+      • Packet capture<br>
+      • Protocol analysis<br>
+      • Traffic visualization<br>
+      • Configurable limits
+    </td>
+    <td>
+      • libpcap/pcap<br>
+      • pnet<br>
+      • plotters<br>
+      • Rust
+    </td>
+  </tr>
+</table>
 
 ## xAI Mission Alignment
 
@@ -76,8 +155,8 @@ The focus on security, reliability, and observability directly supports xAI's ne
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/xai_showcase.git
-   cd xai_showcase
+   git clone https://github.com/x0VIER/xai-systems-engineer-showcase.git
+   cd xai-systems-engineer-showcase
    ```
 
 2. Build all components:
@@ -100,6 +179,65 @@ Detailed instructions for running each tool can be found in their respective REA
 - **Observability**: Real-time monitoring and visualization of system behavior
 - **Performance**: Efficient, low-overhead implementations in Rust
 - **Extensibility**: Modular design allowing for easy integration with other systems
+
+## Implementation Examples
+
+### Secure Sandbox Execution
+
+```rust
+fn main() {
+    let args = Args::parse();
+
+    let mut child = Command::new("bwrap")
+        .arg("--unshare-all")
+        .arg("--ro-bind")
+        .arg("/usr")
+        .arg("/usr")
+        // More isolation arguments...
+        .arg("--")
+        .arg("python3")
+        .arg(&args.script)
+        .stdout(Stdio::inherit())
+        .stderr(Stdio::inherit())
+        .spawn()
+        .expect("Failed to execute command");
+
+    // Monitor resource usage
+    let mut usage_data = Vec::new();
+    let start_time = Instant::now();
+
+    while let Ok(None) = child.try_wait() {
+        // Resource monitoring logic...
+        thread::sleep(Duration::from_millis(100));
+    }
+}
+```
+
+### Distributed KV Store with Raft
+
+```rust
+#[derive(Clone)]
+pub struct RaftNode {
+    id: u64,
+    peers: Vec<u64>,
+    storage: Arc<Mutex<InMemoryStorage>>,
+    // More fields...
+}
+
+impl RaftNode {
+    pub fn new(id: u64, peers: Vec<u64>) -> Self {
+        // Initialize Raft node...
+    }
+
+    pub fn propose(&mut self, data: Vec<u8>) -> Result<(), Error> {
+        // Propose a value to the Raft cluster...
+    }
+
+    pub fn step(&mut self, msg: Message) -> Result<(), Error> {
+        // Process a Raft message...
+    }
+}
+```
 
 ## Contributing
 
