@@ -34,11 +34,11 @@
 
 This repository showcases advanced systems engineering capabilities through three integrated components, each addressing critical aspects of modern distributed systems:
 
-1. **[Secure Code Sandbox](./sandbox/)**: A Rust-based sandbox for executing untrusted Python code in an isolated environment. It leverages Linux namespaces, cgroups, and seccomp to provide process, file, and network isolation, as well as resource limiting.
+1. **[Secure Code Sandbox](https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/sandbox)**: A Rust-based sandbox for executing untrusted Python code in an isolated environment. It leverages Linux namespaces, cgroups, and seccomp to provide process, file, and network isolation, as well as resource limiting.
 
-2. **[Distributed Key-Value Store](./distributed_kv/)**: A lightweight, fault-tolerant, distributed key-value store built in Rust. It uses the Raft consensus algorithm for data replication and consistency, ensuring reliability even when nodes fail.
+2. **[Distributed Key-Value Store](https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/distributed_kv)**: A lightweight, fault-tolerant, distributed key-value store built in Rust. It uses the Raft consensus algorithm for data replication and consistency, ensuring reliability even when nodes fail.
 
-3. **[Network Forensics CLI](./net_forensics/)**: A command-line tool for capturing and analyzing network traffic. It can parse various protocols and generate visualizations of the network data, providing deep insights into system behavior.
+3. **[Network Forensics CLI](https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/net_forensics)**: A command-line tool for capturing and analyzing network traffic. It can parse various protocols and generate visualizations of the network data, providing deep insights into system behavior.
 
 These tools are designed to work together, demonstrating a holistic approach to building and securing complex systems.
 
@@ -65,7 +65,7 @@ The project implements several advanced architectural patterns:
     <th>Technologies</th>
   </tr>
   <tr>
-    <td><a href="./sandbox/">Secure Sandbox</a></td>
+    <td><a href="https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/sandbox">Secure Sandbox</a></td>
     <td>
       • Process isolation<br>
       • Filesystem restrictions<br>
@@ -80,7 +80,7 @@ The project implements several advanced architectural patterns:
     </td>
   </tr>
   <tr>
-    <td><a href="./distributed_kv/">Distributed KV Store</a></td>
+    <td><a href="https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/distributed_kv">Distributed KV Store</a></td>
     <td>
       • Raft consensus<br>
       • Fault tolerance<br>
@@ -95,7 +95,7 @@ The project implements several advanced architectural patterns:
     </td>
   </tr>
   <tr>
-    <td><a href="./net_forensics/">Network Forensics</a></td>
+    <td><a href="https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/net_forensics">Network Forensics</a></td>
     <td>
       • Packet capture<br>
       • Protocol analysis<br>
@@ -168,9 +168,9 @@ The focus on security, reliability, and observability directly supports xAI's ne
 
 Detailed instructions for running each tool can be found in their respective README files:
 
-* [Secure Code Sandbox](./sandbox/README.md)
-* [Distributed Key-Value Store](./distributed_kv/README.md)
-* [Network Forensics CLI](./net_forensics/README.md)
+* [Secure Code Sandbox](https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/sandbox)
+* [Distributed Key-Value Store](https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/distributed_kv)
+* [Network Forensics CLI](https://github.com/x0VIER/xai-systems-engineer-showcase/tree/master/net_forensics)
 
 ## Key Features
 
@@ -245,7 +245,7 @@ This is a personal project, but I welcome any feedback or suggestions. Please fe
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/x0VIER/xai-systems-engineer-showcase/blob/master/LICENSE) file for details.
 
 ## Acknowledgments
 
