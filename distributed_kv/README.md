@@ -1,8 +1,31 @@
 # Distributed Key-Value Store
 
-![Distributed KV Store Architecture](../docs/distributed_kv_architecture.png)
+<div align="center">
+  <img src="../docs/distributed_kv_architecture.png" alt="Distributed KV Store Architecture" width="700">
+</div>
 
-A fault-tolerant, distributed key-value store built in Rust with consensus-based replication for high availability and data consistency.
+<div align="center">
+  <strong>A fault-tolerant, distributed key-value store built in Rust with consensus-based replication for high availability and data consistency.</strong>
+</div>
+
+<br />
+
+<div align="center">
+  <a href="../LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+  </a>
+  <a href="https://github.com/topics/distributed-systems">
+    <img src="https://img.shields.io/badge/Type-Distributed_Systems-blueviolet" alt="Type: Distributed Systems">
+  </a>
+  <a href="https://github.com/topics/consensus">
+    <img src="https://img.shields.io/badge/Algorithm-Raft_Consensus-orange" alt="Algorithm: Raft Consensus">
+  </a>
+  <a href="https://github.com/topics/grpc">
+    <img src="https://img.shields.io/badge/Protocol-gRPC-green" alt="Protocol: gRPC">
+  </a>
+</div>
+
+<br />
 
 ## Overview
 
@@ -25,6 +48,78 @@ The system consists of the following components:
 3. **Storage Engine:** Manages the actual key-value data
 4. **gRPC Server:** Provides the API for clients to interact with the store
 5. **GUI Client:** A graphical interface for easy interaction with the store
+
+## Implementation
+
+### Protocol Definition
+
+```protobuf
+syntax = "proto3";
+package distributed_kv;
+
+service KvStore {
+  rpc Get(GetRequest) returns (GetResponse);
+  rpc Set(SetRequest) returns (SetResponse);
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
+}
+
+message GetRequest {
+  string key = 1;
+}
+
+message GetResponse {
+  string value = 1;
+}
+
+message SetRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message SetResponse {
+  bool success = 1;
+}
+
+message DeleteRequest {
+  string key = 1;
+}
+
+message DeleteResponse {
+  bool success = 1;
+}
+```
+
+### Raft Store Implementation
+
+```rust
+pub struct RaftStore {
+    id: u64,
+    peers: Vec<u64>,
+    state: RaftState,
+    log: Vec<LogEntry>,
+    commit_index: u64,
+    last_applied: u64,
+    // More fields...
+}
+
+impl RaftStore {
+    pub fn new(id: u64, peers: Vec<u64>) -> Self {
+        // Initialize the store...
+    }
+
+    pub fn get(&self, key: &str) -> Option<String> {
+        // Get a value from the store...
+    }
+
+    pub fn set(&mut self, key: &str, value: &str) -> bool {
+        // Set a value in the store...
+    }
+
+    pub fn delete(&mut self, key: &str) -> bool {
+        // Delete a value from the store...
+    }
+}
+```
 
 ## Technical Implementation
 
@@ -57,6 +152,10 @@ This will open a window where you can:
 - **Get:** Retrieve values by key
 - **Set:** Store new key-value pairs
 - **Delete:** Remove keys from the store
+
+<div align="center">
+  <img src="../docs/kv_store_gui.png" alt="KV Store GUI" width="500">
+</div>
 
 ### API Operations
 
