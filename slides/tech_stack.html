@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #1a1a1a;
+        color: #e6e6e6;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+      
+      .title {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+      
+      .highlight {
+        color: #3498db;
+      }
+      
+      .tech-section {
+        margin-bottom: 20px;
+      }
+      
+      .tech-title {
+        font-size: 24px;
+        font-weight: 500;
+        color: #ffffff;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+        display: inline-block;
+      }
+      
+      .tech-item {
+        display: inline-block;
+        background: rgba(52, 152, 219, 0.1);
+        border: 1px solid #3498db;
+        border-radius: 4px;
+        padding: 8px 15px;
+        margin: 5px;
+        font-size: 16px;
+      }
+      
+      .tech-icon {
+        margin-right: 8px;
+        color: #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <h1 class="title">Technology <span class="highlight">Stack</span></h1>
+      
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <div class="tech-section">
+            <h3 class="tech-title">Core Technologies</h3>
+            <div>
+              <span class="tech-item"><i class="fab fa-rust tech-icon"></i>Rust</span>
+              <span class="tech-item"><i class="fas fa-code tech-icon"></i>Protocol Buffers</span>
+              <span class="tech-item"><i class="fas fa-network-wired tech-icon"></i>gRPC</span>
+              <span class="tech-item"><i class="fab fa-python tech-icon"></i>Python</span>
+            </div>
+          </div>
+          
+          <div class="tech-section">
+            <h3 class="tech-title">Secure Sandbox</h3>
+            <div>
+              <span class="tech-item"><i class="fas fa-box tech-icon"></i>bubblewrap</span>
+              <span class="tech-item"><i class="fas fa-shield-alt tech-icon"></i>Linux Namespaces</span>
+              <span class="tech-item"><i class="fas fa-chart-line tech-icon"></i>procfs</span>
+            </div>
+          </div>
+          
+          <div class="tech-section">
+            <h3 class="tech-title">Distributed KV Store</h3>
+            <div>
+              <span class="tech-item"><i class="fas fa-server tech-icon"></i>Raft Consensus</span>
+              <span class="tech-item"><i class="fas fa-exchange-alt tech-icon"></i>Tonic</span>
+              <span class="tech-item"><i class="fas fa-desktop tech-icon"></i>egui/eframe</span>
+            </div>
+          </div>
+          
+          <div class="tech-section">
+            <h3 class="tech-title">Network Forensics</h3>
+            <div>
+              <span class="tech-item"><i class="fas fa-network-wired tech-icon"></i>libpcap</span>
+              <span class="tech-item"><i class="fas fa-search tech-icon"></i>pnet</span>
+              <span class="tech-item"><i class="fas fa-chart-bar tech-icon"></i>plotters</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex justify-center items-center">
+          <div style="height: 500px; width: 550px;">
+            <canvas id="techStackChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('techStackChart').getContext('2d');
+        
+        const chart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['Security', 'Performance', 'Reliability', 'Scalability', 'Observability', 'Maintainability'],
+            datasets: [{
+              label: 'Project Capabilities',
+              data: [95, 90, 85, 80, 90, 85],
+              backgroundColor: 'rgba(52, 152, 219, 0.2)',
+              borderColor: '#3498db',
+              borderWidth: 2,
+              pointBackgroundColor: '#ffffff',
+              pointBorderColor: '#3498db',
+              pointHoverBackgroundColor: '#3498db',
+              pointHoverBorderColor: '#ffffff'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              r: {
+                angleLines: {
+                  color: 'rgba(255, 255, 255, 0.2)'
+                },
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.2)'
+                },
+                pointLabels: {
+                  color: '#e6e6e6',
+                  font: {
+                    size: 14,
+                    family: 'Roboto'
+                  }
+                },
+                ticks: {
+                  color: '#e6e6e6',
+                  backdropColor: 'transparent',
+                  showLabelBackdrop: false
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+direction: right
+
+'User Space': {
+  'Rust Sandbox Orchestrator' -> 'Execute Python Script'
+}
+
+'Linux Kernel Isolation': {
+  'Execute Python Script' -> 'fork() & unshare()'
+  'fork() & unshare()' -> 'New PID Namespace'
+  'fork() & unshare()' -> 'New Mount Namespace'
+  'fork() & unshare()' -> 'New Network Namespace'
+  'fork() & unshare()' -> 'cgroups (CPU, Memory)'
+  'fork() & unshare()' -> 'seccomp-bpf'
+}
+
+'Isolated Environment': {
+  'Untrusted Python Process' -> 'Execution'
+  'Execution' -> 'Limited Syscalls'
+  'Execution' -> 'Resource Limits Exceeded?'
+  'Execution' -> 'Filesystem Access Denied'
+  'New Network Namespace' -> 'No Network Access'
+}
+
+'seccomp-bpf' -> 'Limited Syscalls'
+'cgroups (CPU, Memory)' -> 'Resource Limits Exceeded?'
+'New Mount Namespace' -> 'Filesystem Access Denied'
+

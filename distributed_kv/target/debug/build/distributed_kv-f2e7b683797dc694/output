@@ -1,0 +1,2 @@
+cargo:rerun-if-changed=src/distributed_kv.proto
+cargo:rerun-if-changed=src

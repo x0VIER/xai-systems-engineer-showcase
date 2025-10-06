@@ -1,0 +1,51 @@
+direction: right
+
+style: {
+  fill: "#1a1a1a"
+  stroke: "#3498db"
+  stroke-width: 2
+  font-size: 28
+  font-color: "#ffffff"
+}
+
+title: {
+  label: "xAI Systems Engineer Showcase"
+  style: {
+    font-size: 40
+    bold: true
+    font-color: "#ffffff"
+  }
+}
+
+subtitle: {
+  label: "Secure • Distributed • Observable"
+  style: {
+    font-size: 24
+    italic: true
+    font-color: "#3498db"
+  }
+}
+
+title -> subtitle
+
+components: {
+  shape: circle
+  style.fill: "#3498db"
+  style.stroke: "#ffffff"
+  
+  sandbox: {
+    label: "Secure\nSandbox"
+  }
+  
+  kv_store: {
+    label: "Distributed\nKV Store"
+  }
+  
+  forensics: {
+    label: "Network\nForensics"
+  }
+}
+
+components.sandbox -> components.kv_store -> components.forensics -> components.sandbox: {
+  style.stroke-dash: 5
+}

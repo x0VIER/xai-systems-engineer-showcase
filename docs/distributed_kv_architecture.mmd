@@ -1,0 +1,18 @@
+graph TD
+    A["CLI / Client Library"] --> B{Send Request}
+    B --> C[Go Orchestrator]
+    C --> D{Select Node}
+    D --> E1[Node 1 (Rust)]
+    D --> E2[Node 2 (Rust)]
+    D --> E3[Node 3 (C++)]
+    E1 --> F{Raft Log}
+    E2 --> F
+    E3 --> F
+    F --> G([State Machine])
+    H["Node Failure"] -- "Triggers" --> I{Leader Re-election}
+    I -- "Updates" --> C
+
+    style C fill:#f9f,stroke:#333,stroke-width:2px
+    style E1 fill:#ccf,stroke:#333,stroke-width:2px
+    style E2 fill:#ccf,stroke:#333,stroke-width:2px
+    style E3 fill:#ccf,stroke:#333,stroke-width:2px

@@ -1,0 +1,52 @@
+title: "xAI Systems Engineer Showcase"
+
+# Define the three main components
+sandbox: {
+  label: "Secure Code Sandbox"
+  shape: rectangle
+  style: {
+    fill: "#3498db"
+    stroke: "#ffffff"
+    border-radius: 10
+  }
+}
+
+distributed_kv: {
+  label: "Distributed KV Store"
+  shape: rectangle
+  style: {
+    fill: "#3498db"
+    stroke: "#ffffff"
+    border-radius: 10
+  }
+}
+
+net_forensics: {
+  label: "Network Forensics CLI"
+  shape: rectangle
+  style: {
+    fill: "#3498db"
+    stroke: "#ffffff"
+    border-radius: 10
+  }
+}
+
+# Define the connections
+sandbox -> distributed_kv: "Secure Execution"
+distributed_kv -> net_forensics: "Traffic Analysis"
+net_forensics -> sandbox: "Resource Monitoring"
+
+# Add a central theme
+xai_mission: {
+  label: "xAI Mission"
+  shape: circle
+  style: {
+    fill: "#ffffff"
+    stroke: "#3498db"
+    stroke-width: 2
+  }
+}
+
+sandbox -> xai_mission
+distributed_kv -> xai_mission
+net_forensics -> xai_mission

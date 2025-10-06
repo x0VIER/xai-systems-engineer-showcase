@@ -1,0 +1,14 @@
+[package]
+name = "net_forensics"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pcap = "1.1.0"
+pnet = "0.34.0"
+clap = { version = "4.5.4", features = ["derive"] }
+
+
+
+plotters = "0.3"
+chrono = "0.4"

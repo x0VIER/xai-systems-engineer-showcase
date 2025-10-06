@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #1a1a1a;
+        color: #e6e6e6;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+      
+      .title {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+      
+      .highlight {
+        color: #3498db;
+      }
+      
+      .feature-box {
+        background: rgba(52, 152, 219, 0.1);
+        border-left: 4px solid #3498db;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+      }
+      
+      .feature-title {
+        font-weight: 500;
+        color: #ffffff;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <h1 class="title">Distributed <span class="highlight">Key-Value Store</span></h1>
+      
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <div class="feature-box">
+            <h3 class="feature-title"><i class="fas fa-server mr-2 text-blue-400"></i>Raft Consensus</h3>
+            <p>Implements the Raft consensus algorithm for leader election and data replication, ensuring consistency across nodes.</p>
+          </div>
+          
+          <div class="feature-box">
+            <h3 class="feature-title"><i class="fas fa-exchange-alt mr-2 text-blue-400"></i>gRPC Communication</h3>
+            <p>Uses gRPC for efficient, type-safe communication between nodes and clients with Protocol Buffers.</p>
+          </div>
+          
+          <div class="feature-box">
+            <h3 class="feature-title"><i class="fas fa-shield-alt mr-2 text-blue-400"></i>Fault Tolerance</h3>
+            <p>Maintains availability and consistency even when nodes fail, with automatic leader election.</p>
+          </div>
+          
+          <div class="feature-box">
+            <h3 class="feature-title"><i class="fas fa-desktop mr-2 text-blue-400"></i>Interactive GUI</h3>
+            <p>Provides a simple GUI for interacting with the store, built with egui for a native look and feel.</p>
+          </div>
+        </div>
+        
+        <div class="flex justify-center items-center">
+          <img src="/home/ubuntu/xai_showcase/docs/distributed_kv_architecture.png" alt="Distributed KV Architecture" style="max-width: 550px; max-height: 500px; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

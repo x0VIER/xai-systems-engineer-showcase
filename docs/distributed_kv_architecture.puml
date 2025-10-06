@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+
+package "Client" {
+  [CLI / Client Library] as Client
+}
+
+package "Go Orchestrator" {
+  [Orchestrator] as Orchestrator
+}
+
+Client --> Orchestrator : Send Request
+
+@enduml

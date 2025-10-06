@@ -1,0 +1,27 @@
+[package]
+name = "distributed_kv"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tonic = "0.11"
+prost = "0.12"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+openraft = "0.9"
+
+[build-dependencies]
+tonic-build = "0.11"
+
+
+
+egui = "0.22"
+eframe = "0.22"
+
+
+
+[[bin]]
+name = "gui"
+path = "src/bin/gui.rs"
+

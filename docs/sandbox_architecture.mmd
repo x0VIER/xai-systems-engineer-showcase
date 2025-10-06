@@ -1,0 +1,28 @@
+graph TD
+    subgraph "User Space"
+        A["Rust Sandbox Orchestrator"] --> B{Execute Python Script};
+    end
+
+    subgraph "Linux Kernel Isolation"
+        B --> C["fork() & unshare()"];
+        C --> D["New PID Namespace"];
+        C --> E["New Mount Namespace"];
+        C --> F["New Network Namespace"];
+        C --> G["cgroups (CPU, Memory)"];
+        C --> H["seccomp-bpf"];
+    end
+
+    subgraph "Isolated Environment"
+        I["Untrusted Python Process"] --> J{Execution};
+        J --> K(["Limited Syscalls"]);
+        J --> L(["Resource Limits Exceeded?"]);
+        J --> M(["Filesystem Access Denied"]);
+        F --> N(["No Network Access"]);
+    end
+
+    H --> K;
+    G --> L;
+    E --> M;
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px

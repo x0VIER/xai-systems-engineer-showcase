@@ -1,0 +1,29 @@
+direction: right
+
+'Client': {
+  'CLI / Client Library' -> 'Send Request'
+}
+
+'Go Orchestrator': {
+  'Send Request' -> 'Orchestrator'
+  'Orchestrator' -> 'Select Node'
+}
+
+'Rust/C++ Worker Nodes': {
+  'Select Node' -> 'Node 1 (Rust)'
+  'Select Node' -> 'Node 2 (Rust)'
+  'Select Node' -> 'Node 3 (C++)'
+}
+
+'Raft Consensus': {
+  'Node 1 (Rust)' -> 'Raft Log'
+  'Node 2 (Rust)' -> 'Raft Log'
+  'Node 3 (C++)' -> 'Raft Log'
+  'Raft Log' -> 'State Machine'
+}
+
+'Fault Tolerance': {
+  'Node Failure' -> 'Leader Re-election': {label: "Triggers"}
+  'Leader Re-election' -> 'Orchestrator': {label: "Updates"}
+}
+

@@ -1,0 +1,2 @@
+SegmentValue<&std::string::String>: From<std::string::String>
+std::string::String: Into<SegmentValue<&std::string::String>>

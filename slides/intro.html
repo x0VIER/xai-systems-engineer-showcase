@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #1a1a1a;
+        color: #e6e6e6;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+      
+      .title {
+        color: #ffffff;
+        font-size: 72px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+      
+      .subtitle {
+        color: #e6e6e6;
+        font-size: 36px;
+        font-weight: 400;
+        margin-bottom: 50px;
+      }
+      
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 500px;
+      }
+      
+      .highlight {
+        color: #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container flex flex-col justify-center items-center">
+      <div class="content text-center">
+        <h1 class="title">xAI Systems Engineer <span class="highlight">Showcase</span></h1>
+        <h2 class="subtitle">Building Secure, Distributed, and Observable Systems</h2>
+        <div class="mt-10">
+          <img src="/home/ubuntu/xai_showcase/docs/project_overview.png" alt="Project Overview" style="max-width: 800px; max-height: 400px; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
