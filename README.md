@@ -1,7 +1,7 @@
 # xAI Systems Engineer Showcase
 
 <div align="center">
-  <img src="docs/banner.png" alt="xAI Systems Engineer Showcase Banner" width="800">
+  <img src="https://github.com/x0VIER/xai-systems-engineer-showcase/raw/master/docs/banner.png" alt="xAI Systems Engineer Showcase Banner" width="800">
 </div>
 
 <div align="center">
@@ -11,7 +11,7 @@
 <br />
 
 <div align="center">
-  <a href="LICENSE">
+  <a href="https://github.com/x0VIER/xai-systems-engineer-showcase/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
   </a>
   <a href="https://www.rust-lang.org/">
@@ -45,7 +45,7 @@ These tools are designed to work together, demonstrating a holistic approach to 
 ## Architecture
 
 <div align="center">
-  <img src="docs/project_overview.png" alt="Project Architecture Overview" width="700">
+  <img src="https://github.com/x0VIER/xai-systems-engineer-showcase/raw/master/docs/project_overview.png" alt="Project Architecture Overview" width="700">
 </div>
 
 The project implements several advanced architectural patterns:

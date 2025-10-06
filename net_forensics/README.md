@@ -1,7 +1,7 @@
 # Network Forensics CLI
 
 <div align="center">
-  <img src="../docs/net_forensics_architecture.png" alt="Network Forensics CLI Architecture" width="700">
+  <img src="https://github.com/x0VIER/xai-systems-engineer-showcase/raw/master/docs/net_forensics_architecture.png" alt="Network Forensics CLI Architecture" width="700">
 </div>
 
 <div align="center">
@@ -11,7 +11,7 @@
 <br />
 
 <div align="center">
-  <a href="../LICENSE">
+  <a href="https://github.com/x0VIER/xai-systems-engineer-showcase/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
   </a>
   <a href="https://github.com/topics/network-analysis">
@@ -140,7 +140,7 @@ This will capture 500 packets from the eth0 interface and generate a visualizati
 The tool generates a `protocol_distribution.png` file showing the distribution of different network protocols:
 
 <div align="center">
-  <img src="../protocol_distribution.png" alt="Protocol Distribution" width="600">
+  <img src="https://github.com/x0VIER/xai-systems-engineer-showcase/raw/master/net_forensics/protocol_distribution.png" alt="Protocol Distribution" width="600">
 </div>
 
 ## Use Cases

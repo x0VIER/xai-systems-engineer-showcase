@@ -1,7 +1,7 @@
 # Distributed Key-Value Store
 
 <div align="center">
-  <img src="../docs/distributed_kv_architecture.png" alt="Distributed KV Store Architecture" width="700">
+  <img src="https://github.com/x0VIER/xai-systems-engineer-showcase/raw/master/docs/distributed_kv_architecture.png" alt="Distributed KV Store Architecture" width="700">
 </div>
 
 <div align="center">
@@ -11,7 +11,7 @@
 <br />
 
 <div align="center">
-  <a href="../LICENSE">
+  <a href="https://github.com/x0VIER/xai-systems-engineer-showcase/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
   </a>
   <a href="https://github.com/topics/distributed-systems">
@@ -154,7 +154,7 @@ This will open a window where you can:
 - **Delete:** Remove keys from the store
 
 <div align="center">
-  <img src="../docs/kv_store_gui.png" alt="KV Store GUI" width="500">
+  <img src="https://github.com/x0VIER/xai-systems-engineer-showcase/raw/master/docs/kv_store_gui.png" alt="KV Store GUI" width="500">
 </div>
 
 ### API Operations
