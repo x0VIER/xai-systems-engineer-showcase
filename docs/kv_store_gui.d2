@@ -1,0 +1,116 @@
+title: "Distributed KV Store GUI"
+
+style: {
+  fill: "#1a1a1a"
+  stroke: "#3498db"
+  stroke-width: 2
+  font-size: 14
+  font-color: "#ffffff"
+}
+
+window: {
+  label: "Distributed KV Store"
+  shape: rectangle
+  style: {
+    fill: "#2c3e50"
+    stroke: "#3498db"
+    stroke-width: 2
+    border-radius: 10
+  }
+  
+  key_section: {
+    label: "Key"
+    shape: rectangle
+    style: {
+      fill: "#34495e"
+      stroke: "#3498db"
+      stroke-width: 1
+      border-radius: 5
+    }
+  }
+  
+  key_input: {
+    label: "user:1001"
+    shape: rectangle
+    style: {
+      fill: "#2c3e50"
+      stroke: "#3498db"
+      stroke-width: 1
+      border-radius: 5
+    }
+  }
+  
+  value_section: {
+    label: "Value"
+    shape: rectangle
+    style: {
+      fill: "#34495e"
+      stroke: "#3498db"
+      stroke-width: 1
+      border-radius: 5
+    }
+  }
+  
+  value_input: {
+    label: "{\"name\":\"John\",\"role\":\"admin\"}"
+    shape: rectangle
+    style: {
+      fill: "#2c3e50"
+      stroke: "#3498db"
+      stroke-width: 1
+      border-radius: 5
+    }
+  }
+  
+  buttons: {
+    get_button: {
+      label: "Get"
+      shape: rectangle
+      style: {
+        fill: "#3498db"
+        stroke: "#ffffff"
+        stroke-width: 1
+        border-radius: 5
+      }
+    }
+    
+    set_button: {
+      label: "Set"
+      shape: rectangle
+      style: {
+        fill: "#2ecc71"
+        stroke: "#ffffff"
+        stroke-width: 1
+        border-radius: 5
+      }
+    }
+    
+    delete_button: {
+      label: "Delete"
+      shape: rectangle
+      style: {
+        fill: "#e74c3c"
+        stroke: "#ffffff"
+        stroke-width: 1
+        border-radius: 5
+      }
+    }
+  }
+  
+  result_section: {
+    label: "Result: Operation successful"
+    shape: rectangle
+    style: {
+      fill: "#34495e"
+      stroke: "#2ecc71"
+      stroke-width: 1
+      border-radius: 5
+    }
+  }
+}
+
+window.key_section -> window.key_input
+window.value_section -> window.value_input
+window.buttons.get_button -> window.result_section
+window.buttons.set_button -> window.result_section
+window.buttons.delete_button -> window.result_section
